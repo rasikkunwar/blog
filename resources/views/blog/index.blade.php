@@ -13,7 +13,7 @@
 		<h1>{{$post->title}}</h1>
 		<h5>Published At: {{date('M j,Y'),strtotime($post->created_at)}}</h5>
 		<p>{{$post->body}}</p>
-		<a href="" class="btn btn-primary">Read More</a>
+		<a href="{{'blog/'.$post->slug}}" class="btn btn-primary">Read More</a>
 	</div>
 </div>
 <hr>

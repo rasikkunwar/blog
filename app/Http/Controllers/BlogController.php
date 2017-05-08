@@ -9,7 +9,7 @@ use App\Post;
 class BlogController extends Controller
 {
 	public function getIndex(){
-		$post=Post::paginate(10);
+		$post=Post::paginate(5);
 		return view('blog.index')->with('posts',$post);
 	}
     public function getSingle($slug){

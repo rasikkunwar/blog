@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSlugToUser extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class AddSlugToUser extends Migration
      */
     public function up()
     {
-        Schema::table('posts',function($table){
-        $table->string('slug')->unique()->after('body');
+        Schema::create('tags', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
         });
-        //
     }
 
     /**
@@ -24,9 +25,8 @@ class AddSlugToUser extends Migration
      *
      * @return void
      */
-    public function down(){
-    Schema::table('posts',function($table){
-    $table->dropCloumn('slug');
-    });
+    public function down()
+    {
+        Schema::dropIfExists('tags');
     }
 }

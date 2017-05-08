@@ -6,15 +6,17 @@
 <div class="col-md-8">
 {{Form::label('title','Title:')}}
 {{Form::text('title',null,['class' => 'form-control input-lg'])}}
-{{Form::label('slug','Slug:')}}
+{{Form::label('slug','Slug:',['class'=>'label-margin'])}}
 {{Form::text('slug',null,['class' => 'form-control input-lg'])}}
+{{Form::label('category_id','Category:',['class'=>'label-margin'])}}
+{{Form::select('category_id',$categories,null,['class'=>'form-control'])}}
 {{Form::label('body','Body:',['class'=>'label-margin'])}}
 {{Form::text('body',null,['class' => 'form-control'])}}
 </div>
 <div class="col-md-4">
 	<div class="well">
 		<dl class="dl-horizontal">
-          <dt>Create At:</dt>
+          <dt>Created At:</dt>
            <dd>{{date('M j,Y H:ia',strtotime($posts->created_at))}}</dd>
          </dl>
            <dl class="dl-horizontal">

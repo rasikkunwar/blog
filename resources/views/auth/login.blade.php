@@ -10,7 +10,7 @@
 		{{Form::password('password',['class' => 'form-control'])}}
 		{{Form::checkbox('remember')}} {{Form::label('remember','Remeber Me',['class' => 'label-margin'])}}
 		{{Form::submit('Log In',['class' =>'btn btn-primary btn-block label-margin'])}}
-
+        <p ><a href="{{ url('password/reset') }}">Forgot My Password</a></p>
 
 		{!!Form::close()!!}
 	</div>
